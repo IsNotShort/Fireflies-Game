@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/parkmusic.ogg-cda1ad38e3a809c3086149a39305a168.oggstr"
+
+[deps]
+
+source_file="res://scenes/park/parkmusic.ogg"
+source_md5="441afc7839c2c3fe539ae1f11137d835"
+
+dest_files=[ "res://.import/parkmusic.ogg-cda1ad38e3a809c3086149a39305a168.oggstr" ]
+dest_md5="09399cf51662aef4f0c559f8078073ce"
+
+[params]
+
+loop=true
+loop_offset=0

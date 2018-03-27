@@ -1,0 +1,153 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://gui/menu_screen/play.gd" type="Script" id=1]
+[ext_resource path="res://gui/menu_screen/exit.gd" type="Script" id=2]
+[ext_resource path="res://gui/menu_screen/menumusic.ogg" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+
+font_path = "res://gui/m5x7.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 70
+use_mipmaps = false
+use_filter = false
+font_data = SubResource( 1 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[sub_resource type="DynamicFontData" id=6]
+
+font_path = "res://gui/m5x7.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+
+size = 50
+use_mipmaps = true
+use_filter = false
+font_data = SubResource( 6 )
+_sections_unfolded = [ "Font", "Settings" ]
+
+[node name="Control" type="Control" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 900.0
+margin_bottom = 600.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -89.0
+margin_top = -45.0
+margin_right = 1017.0
+margin_bottom = 708.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 1 )
+
+[node name="title" type="Label" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 86.0
+margin_top = 98.0
+margin_right = 853.0
+margin_bottom = 288.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+size_flags_stretch_ratio = 30.38
+custom_fonts/font = SubResource( 2 )
+text = "\"It's time to go home!\""
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect", "Size Flags", "Theme", "Visibility", "custom_fonts" ]
+
+[node name="play" type="Button" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 400.0
+margin_top = 293.0
+margin_right = 555.0
+margin_bottom = 343.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 7 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "replay"
+flat = false
+align = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="exit" type="Button" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 400.0
+margin_top = 393.0
+margin_right = 555.0
+margin_bottom = 443.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 7 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "exit"
+flat = false
+align = 1
+script = ExtResource( 2 )
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="music" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 3 )
+volume_db = -12.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[connection signal="pressed" from="play" to="play" method="_on_play_pressed"]
+
+[connection signal="pressed" from="exit" to="exit" method="_on_exit_pressed"]
+
+
